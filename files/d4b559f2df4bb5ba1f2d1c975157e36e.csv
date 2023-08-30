@@ -1,0 +1,19 @@
+Product Code,Product Name,Variant,Expected,Counted
+2635390,AMOL_TEST_PRODUCT_2,fgdfggdf,-6,10
+2635390,AMOL_TEST_PRODUCT_2,a,11,10
+2635390,AMOL_TEST_PRODUCT_2,B,24,10
+2635390,AMOL_TEST_PRODUCT_2,,-1,10
+25381710,aaa124,,-47,10
+28403364,golden (200),,446,0
+33287725,fererro rocher,,10,10
+44394265,iPhone,iPhone 5S,90,10
+44394265,iPhone,iPhone 6S,97,10
+44394265,iPhone,iPhone SE,96,10
+44394265,iPhone,Moto X6,-2,10
+47436261,Motorola,Moto E4,-5,10
+47436261,Motorola,Moto G5,-1,10
+47436261,Motorola,Moto X6,-3,10
+47436261,Motorola,Note,-6,10
+52669527,restaurants,,86,10
+81567325,golden tea(200),,513.99,10
+tea100,tea-100,,-160,200
