@@ -497,6 +497,7 @@ function loadItems() {
         total = 0;
         count = 1;
         an = 1;
+        adminsData = 0;
         product_tax = 0;
         $("#toTable tbody").empty();
         
@@ -512,9 +513,9 @@ function loadItems() {
         console.log(sortedItems);
         
         $.each(sortedItems, function () {
-                    
-            var item = this;
             
+            var adminDatas = adminData; // Remove button condition
+            var item = this;
             var item_id = site.settings.item_addition == 1 ? item.item_id : item.id;
             item.order = item.order ? item.order : order_no++;
             var from_warehouse = localStorage.getItem('from_warehouse'), check = false;
@@ -611,11 +612,16 @@ function loadItems() {
             }
 
             tr_html += '<td class="text-right"><span class="text-right ssubtotal" id="subtotal_' + row_no + '">' + formatMoney(((parseFloat(item_cost) - item_discount + parseFloat(pr_tax_val)) * parseFloat(item_qty))) + '</span></td>';
+          // Remove button condition
+            if (adminDatas == true) {
             tr_html += '<td class="text-center"><i class="fa fa-times tip todel" id="' + row_no + '" title="Remove" style="cursor:pointer;"></i></td>';
+               
+            }
             newTr.html(tr_html);
             newTr.prependTo("#toTable");
             total += formatDecimal(((parseFloat(item_cost) + parseFloat(pr_tax_val)) * parseFloat(item_qty)), 4);
             count += parseFloat(item_qty);
+            adminsData += adminDatas;
             an++;
             
             var checkStocks = false;
@@ -652,7 +658,16 @@ function loadItems() {
         if (site.settings.tax1 == 1) {
             tfoot += '<th class="text-right">' + formatMoney(product_tax) + '</th>';
         }
-        tfoot += '<th class="text-right">' + formatMoney(total) + '</th><th class="text-center"><i class="fa fa-trash-o" style="opacity:0.5; filter:alpha(opacity=50);"></i></th></tr>';
+        tfoot += '<th class="text-right">' + formatMoney(total) + '</th>';
+       
+        if (adminsData == 1) {
+            // tfoot += '<th class="text-center">No Trash</th>'; 
+            tfoot += '<th class="text-center"><i class="fa fa-trash-o" style="opacity:0.5; filter:alpha(opacity=50);"></i></th>';
+        } 
+
+    
+        tfoot +='</tr>';
+    
         $('#toTable tfoot').html(tfoot);
 
         // Totals calculations after item addition

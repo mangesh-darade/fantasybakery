@@ -65,9 +65,17 @@ $query_builder = TRUE;
 $db['default'] = array(
 	'dsn'	   => '',
 	'hostname' => 'localhost',
-	'username' => 'sitadmin_2171fan',
-	'password' => '66E?.uBpyJ6?D*k',
-	'database' => 'sitadmin_fantasyb2171',
+
+	// 'username' => 'sitadmin_2171fan',
+	// 'password' => '66E?.uBpyJ6?D*k',
+	// 'database' => 'sitadmin_fantasyb2171',
+
+	'username' => 'root',
+	'password' => '',
+	// 'database' => 'sitadmin_fantasyb2171',
+	'database' => 'sitadmin_devpos',
+
+
 	'dbdriver' => 'mysqli',
 	'dbprefix' => 'sma_',
 	'pconnect' => FALSE,

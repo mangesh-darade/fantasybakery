@@ -309,7 +309,8 @@ class Transfers extends MY_Controller
             $this->data['warehouses'] = $this->site->getAllWarehouses();
             $this->data['tax_rates'] = $this->site->getAllTaxRates();
             $this->data['rnumber'] = ''; //$this->site->getReference('to');
-
+            $this->data['UsersDatas']          =  $this->Owner; // Admin Login
+          
             $bc = array(array('link' => base_url(), 'page' => lang('home')), array('link' => site_url('transfers'), 'page' => lang('transfers')), array('link' => '#', 'page' => lang('add_transfer')));
             $meta = array('page_title' => lang('transfer_quantity'), 'bc' => $bc);
             $this->page_construct('transfers/add', $meta, $this->data);
@@ -679,12 +680,14 @@ class Transfers extends MY_Controller
                 $c++;
             }
 			
-			//print_r($pr); exit;
+			//print_r($pr); exit;    
+          
             $this->data['transfer_items'] = json_encode($pr);
-            $this->data['id'] = $id;
-            $this->data['warehouses'] = $this->site->getAllWarehouses();
-            $this->data['tax_rates'] = $this->site->getAllTaxRates();
-
+            $this->data['id']             = $id;
+            $this->data['UsersDatas']          =  $this->Owner; // Admin Login
+            $this->data['warehouses']     = $this->site->getAllWarehouses();
+            $this->data['tax_rates']      = $this->site->getAllTaxRates();
+           
             $bc = array(array('link' => base_url(), 'page' => lang('home')), array('link' => site_url('transfers'), 'page' => lang('transfers')), array('link' => '#', 'page' => lang('edit_transfer')));
             $meta = array('page_title' => lang('edit_transfer_quantity'), 'bc' => $bc);
             $this->page_construct('transfers/edit', $meta, $this->data);

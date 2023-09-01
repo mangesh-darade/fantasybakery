@@ -1059,9 +1059,10 @@
                                                         <th><?= lang("subtotal"); ?> (<span
                                                                 class="currency"><?= $default_currency->code ?></span>)
                                                         </th>
-                                                        <th style="width: 30px !important; text-align: center;"><i
-                                                                class="fa fa-trash-o"
-                                                                style="opacity:0.5; filter:alpha(opacity=50);"></i></th>
+                                                         <?php if ($Owner) { ?>
+                                                        <th style="width: 30px !important; text-align: center;"><i class="fa fa-trash-o"  style="opacity:0.5; filter:alpha(opacity=50);"></i></th>
+                                                        
+                                                    <?php } ?>
                                                     </tr>
                                                 </thead>
                                                 <tbody></tbody>
@@ -1526,4 +1527,7 @@ $(document).on('ifUnchecked', '.multi-select', function(event) {
     </script>
            
         <!-- End Barcode Scan Using Camera -->
+    <script>
+           var adminData = <?php echo json_encode($UsersDatas); ?>;
 
+    </script>
