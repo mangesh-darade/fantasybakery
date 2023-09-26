@@ -5,7 +5,7 @@ $warehouseIds = is_numeric($warehouse_id) ? '/'.$warehouse_id : '';
 <script>
     $(document).ready(function () {
         
-        ////////////////////////////////////////////////////////////
+        /////////////////////////////////////////////////
          var oTable = $('#POSData').dataTable({
             "aaSorting": [[0, "asc"], [1, "desc"]],
             "aLengthMenu": [[10, 25, 50, 100, -1], [10, 25, 50, 100, "<?= lang('all') ?>"]],
