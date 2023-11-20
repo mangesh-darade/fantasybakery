@@ -73,7 +73,7 @@ $db['default'] = array(
 	'username' => 'root',
 	'password' => '',
 	// 'database' => 'sitadmin_fantasyb2171',
-	'database' => 'sitadmin_devpos',
+	'database' => 'new_devpos1910',
 
 
 	'dbdriver' => 'mysqli',
