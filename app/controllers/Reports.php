@@ -12935,8 +12935,8 @@ class Reports extends MY_Controller {
         $subcategory = isset($_REQUEST['subcategory']) ? $_REQUEST['subcategory'] : NULL;
         $warehouse = isset($_REQUEST['warehouse']) ? $_REQUEST['warehouse'] : NULL;
 
-        $start_date = isset($_REQUEST['start_date']) ? $_REQUEST['start_date'] : NULL;
-        $end_date = isset($_REQUEST['end_date']) ? $_REQUEST['end_date'] : NULL;
+        $start_date = isset($_REQUEST['start_date']) ? $_REQUEST['start_date'] : date("Y-m-d",strtotime("today"));
+        $end_date = isset($_REQUEST['end_date']) ? $_REQUEST['end_date'] : date("Y-m-d",strtotime("yesterday"));
         $with_or_without_gst = isset($_REQUEST['with_or_without_gst']) ? $_REQUEST['with_or_without_gst'] : NULL;
         $purchase_date_filter = isset($_REQUEST['purchase_date_filter']) ? $_REQUEST['purchase_date_filter'] : NULL;
 
